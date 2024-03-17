@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Zero-Shot Task Hallucinaton">
+  <meta property="og:title" content="Zero-Shot Task Hallucinaton"/>
+  <meta property="og:description" content="Zero-Shot Task Hallucinaton"/>
+  <meta property="og:url" content="https://github.com/dannymcy/zeroshot_task_hallucination_code"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <!-- <meta property="og:image" content="sliders/illum_car_0.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/> -->
+
+
+  <!-- <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG"> -->
+  <!-- <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG"> -->
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <!-- <meta name="twitter:image" content="static/images/your_twitter_banner_image.png"> -->
+  <!-- <meta name="twitter:card" content="summary_large_image"> -->
+  <!-- Keywords for your paper to be indexed by-->
+  <!-- <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE"> -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+
+  <title>Zero-Shot Task Hallucinaton</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">See, Imagine, Plan: Discovering and Hallucinating Tasks from a Single Image</h1>
+              <!-- <h2> <font size="+2.5"> In Submission </font></h1> -->
+                <!-- <br> -->
+
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://dannymcy.github.io" target="_blank">Chenyang Ma</a>,</span>
+                <span class="author-block">
+                  <a href="https://www.cs.ox.ac.uk/people/kai.lu/" target="_blank">Kai Lu</a>,</span>
+                    <span class="author-block">
+                      <a href="https://ttchengab.github.io" target="_blank">Ta-Ying Cheng</a>,</span>
+                    </br>
+                      <span class="author-block">
+                        <a href="https://en.wikipedia.org/wiki/Niki_Trigoni" target="_blank">Niki Trigoni</a>,</span>
+                        <span class="author-block">
+                          <a href="https://www.cs.ox.ac.uk/people/andrew.markham/" target="_blank">Andrew Markham</a>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block" style="margin-top: 5px;"> University of Oxford<br></span>
+                  </div>
+                  <br>
+                  
+
+                  <!-- <div class="column has-text-centered">
+                    <div class="publication-links"> -->
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="Zero_Shot_Task_Hallucination.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- Supplementary PDF link -->
+                    <!-- <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                  <!-- Github link -->
+
+                  <span class="link-block">
+                    <a href="google.com" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                  <span class="link-block">
+                    <a href="https://github.com/dannymcy/zeroshot_task_hallucination" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Teaser image-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- <video poster="" id="tree" autoplay controls muted loop height="100%"> -->
+        <!-- Your video here -->
+        <!-- <source src="static/videos/banner_video.mp4"
+        type="video/mp4"> -->
+          <img src="static/images/teaser.jpg" alt="Zero-Shot Task Hallucinaton"/>
+
+          <!-- <video controls loop>
+            <source src="static/images/teaser_vid.mov">
+            Your browser does not support the video tag.
+          </video> -->
+      <!-- </video> -->
+      <h2 class="subtitle has-text-centered">
+        <b>TL;DR:</b> We present a model for <em>zero-shot task hallucination</em>. With a single RGB image of any scene comprising unknown environments and objects, 
+        we identify potential tasks (task discovery) and imagine their execution (manipulation) in a vivid narrative, realized as a video. 
+        We also provide the trajectories of the executed tasks.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser image -->
+
+
+
+<!-- Teaser video-->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_35/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video1">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video1" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/teaser/video_47_obj_2_Chair_to_Table_Adjustment.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Rotate and translate the chair to position it appropriately in front of the coffee table."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_34/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video2">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video2" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/teaser/video_46_obj_2_Recycling_Waste.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold" > <font size="-1.5">
+            "Lift the container and deposit it into the trash bin."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_4/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video3">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video3" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/teaser/video_16_obj_0_Align_Kettle_to_Base.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold" > <font size="-1.5">
+            "Position the kettle onto its base to align the electrical contacts for power connectivity."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_18/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video4">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video4" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/teaser/video_30_obj_2_Toilet_Brushing.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold" > <font size="-1.5">
+            "Insert the toilet brush into the toilet bowl and scrub for cleaning."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_12/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video5">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video5" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/teaser/video_24_obj_0_Write_on_Board.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold" > <font size="-1.5">
+            "Place the pen beside the blue eraser on the whiteboard shelf and write on the board."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_38/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video6">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video6" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/teaser/video_50_obj_2_Place_Apple_in_Pot.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold" > <font size="-1.5">
+            "Pick up the apple and place it inside the pot."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_38/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video7">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video7" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/teaser/video_50_obj_3_Cover_the_Pan.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold" > <font size="-1.5">
+            "Move the pot lid horizontally and align it with the top of the pan to cover it completely."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_37/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video8">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video8" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/teaser/video_49_obj_4_Slice_Orange.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold" > <font size="-1.5">
+            "The knife is used to slice the orange into halves or wedges on the cutting board."
+          </h2> </font>
+        </div>
+      
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_24/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video9">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video9" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/teaser/video_36_obj_1_Cup_Position_Adjustment.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold" > <font size="-1.5">
+            "Reposition the cup under the espresso machine's coffee dispenser for pouring."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_5/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video10">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video10" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/teaser/video_17_obj_0_Place_Lid_on_Coffee_Canister.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold" > <font size="-1.5">
+            "Slide the coffee lid horizontally to match the coffee canister, then lower it to cap it securely."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_19/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video11">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video11" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/teaser/video_31_obj_1_Prepare_a_Cup_of_Coffee.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold" > <font size="-1.5">
+            "Place the cup beneath the coffee machine's dispensing area to fill it with coffee."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_26/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video12">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video12" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/teaser/video_38_obj_1_Orientation_Change.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold" > <font size="-1.5">
+            "Rotate the valve around its own axis to open or close the radiator."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/NOCS_test/scene_2/0049_color.png" alt=""/>
+        </div>
+        <div class="item item-video13">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video13" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/teaser/video_1_obj_6_Move_Pen_to_Mug.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold" > <font size="-1.5">
+            "Pick up the pen and place it into the mug, ensuring the pen is stored securely inside."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_28/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video14">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video14" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/teaser/video_40_obj_3_Place_Cellphone_on_Charging_Dock.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold" > <font size="-1.5">
+            "Move the cellphone to the base of the telephone, assuming it's a charging dock."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/NOCS_test/scene_1/0006_color.png" alt=""/>
+        </div>
+        <div class="item item-video15">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video15" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/teaser/video_0_obj_2_Mug_to_Can_Transfer.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold" > <font size="-1.5">
+            "Pick up the mug and pour its contents into the can."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_10/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video16">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video16" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/teaser/video_22_obj_0_Adjust_Viewing_Angle.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold" > <font size="-1.5">
+            "Rotate the security camera to adjust its viewing angle to cover a desired area within the room."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_17/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video17">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video17" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/teaser/video_29_obj_5_Washing_Plate.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold" > <font size="-1.5">
+            "Position the plate beneath the faucet and rinse it."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_27/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video18">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video18" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/teaser/video_39_obj_1_Unlock_Door.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold" > <font size="-1.5">
+            "Insert the key card into the door lock's card reader to unlock the door."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_16/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video19">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video19" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/teaser/video_28_obj_0_Cup_Relocation.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold" > <font size="-1.5">
+            "Pick up the cup and place it securely inside the dishwasher rack."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_21/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video20">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video20" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/teaser/video_33_obj_1_Position_Adjustment.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold" > <font size="-1.5">
+            "Move the wet floor sign near the radiator to signal the area around it is slippery."
+          </h2> </font>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Humans can not only recognize and understand the world in its current state but also envision future scenarios that extend beyond immediate perception. 
+            To resemble this profound human capacity, we introduce <b>zero-shot task hallucination</b>—given a single RGB image of 
+            any scene comprising unknown environments and objects, our model can identify potential tasks and imagine their execution in a vivid narrative, 
+            realized as a video. We develop a modular pipeline that progressively enhances scene decomposition, comprehension, and reconstruction, 
+            incorporating VLM for dynamic interaction and 3D motion planning for object trajectories. Our model can discover diverse tasks, 
+            with the generated task videos demonstrating realistic and compelling visual outcomes that are understandable by both machines and humans.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Image carousel -->
+
+<!-- End image carousel -->
+
+
+<!-- Youtube video -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <h2 class="title is-3">Method Overview</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+
+          <!-- <div class="publication-video"> -->
+            <!-- Youtube embed code here -->
+            <!-- <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+           -->
+           <img src="static/images/pipeline.jpg" alt="Method Overview"/>
+           <div class="content has-text-justified">
+             <p>
+              We develop a modular pipeline that progressively enhances scene decomposition, comprehension, and reconstruction, 
+              incorporating Vision-Language Model (VLM) for dynamic interaction and 3D motion planning for object trajectories, producing geometric-aware task videos.
+              To understand the image scene, we use VLM to identify interactive objects and propose context-dependent tasks in a role-play manner, complemented by 
+              language-guided segmentation and repainting models to obtain occlusion-free object masks. Elevating 2D understanding to 3D, we use depth estimation 
+              and single-view 3D reconstruction models to generate a semi-reconstructed 3D scene, with the full 3D representation of foreground objects and the background as a plane. 
+              With the reconstructed 3D scene, we introduce a novel axes-constrained 3D planning approach that enables VLM to plan the motion of objects for given tasks by specifying waypoints. 
+              Through the combination of traditional path planning algorithms, our model generates complete, feasible, and natural trajectories from merely a single image observation. With the entire framework being fully modularized, each component can be easily replaced with the latest improvements within its specific domain. 
+             </p>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End youtube video -->
+
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">More Results</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_18/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video42">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video42" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_30_obj_3_Toilet_Cleaning.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Lift the cleaning agent bottle above the toilet bowl and dispense its liquid for cleaning."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_14/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video43">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video43" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_26_obj_1_Place_Notice_on_Board.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Pick up the paper and place it onto the bulletin board, ensuring it is aligned and visible."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_20/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video44">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video44" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_32_obj_0_Align_to_Wall.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Rotate the trash can to align it parallel to the adjacent wall for better space utilization."
+          </h2> </font>
+        </div>
+        <div class="item item-video45">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video45" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_32_obj_1_Placement_in_Receptacle.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Pick up the plastic bottle and place it inside the trash can."
+          </h2> </font>
+        </div>
+        <div class="item item-video46">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video46" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_32_obj_1_Upright_Orientation.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Rotate the plastic bottle from its current horizontal position to an upright vertical position."
+          </h2> </font>
+        </div>
+  
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_16/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video47">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video47" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_28_obj_0_Cup_Position_Adjustment.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Move the cup to the edge of the sink to prepare for the next task or operation."
+          </h2> </font>
+        </div>
+        <div class="item item-video48">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video48" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_28_obj_0_Cup_Washing.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Position the cup beneath the faucet and rinse it."
+          </h2> </font>
+        </div>
+        <div class="item item-video49">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video49" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_28_obj_4_Place_Detergent_on_Sink.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Pick up the detergent container and place it on the sink's edge to facilitate easy access"
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_17/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video50">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video50" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_29_obj_3_Preparing_Hand_Soap_for_Dishwashing.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Position the hand soap over the dish and shake its contents in preparation for dishwashing."
+          </h2> </font>
+        </div>
+        <div class="item item-video51">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video51" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_29_obj_4_Plate_Cleaning.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Place the sponge on the white plate and scrub it to clean."
+          </h2> </font>
+        </div>
+        <div class="item item-video52">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video52" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_29_obj_5_Plate_Relocation.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Move the plate from its current location to the right side of the sink to clear space."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_19/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video53">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video53" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_31_obj_0_Rotate_to_face_cup.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Rotate the coffee machine to face the cup, facilitating easier operation."
+          </h2> </font>
+        </div>
+        <div class="item item-video54">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video54" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_31_obj_1_Relocate_Cup_to_Serving_Area.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Move the cup to the metal plate to prepare it for serving."
+          </h2> </font>
+        </div>
+        <div class="item item-video55">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video55" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_31_obj_3_Preparation_for_Tea_Making.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Move the tea box closer to the cup to facilitate the process of making tea."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_15/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video56">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video56" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_27_obj_0_Place_mug_in_dishwasher.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Pick up the mug and place it securely inside the dishwasher rack."
+          </h2> </font>
+        </div>
+        <div class="item item-video57">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video57" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_27_obj_2_Place_Container_in_Dishwasher.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Pick up the container and place it securely inside the dishwasher rack."
+          </h2> </font>
+        </div>
+        <div class="item item-video58">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video58" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_27_obj_2_Rotate_Container_Lid.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Rotate the lid of the container to simulate opening or closing."
+          </h2> </font>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_28/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video59">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video59" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_40_obj_1_Door_Closing.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Rotate the door handle to close the door."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_21/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video60">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video60" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_33_obj_2_Extinguishing_Fire.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Bring the fire extinguisher near the radiator and simulate the act of extinguishing the fire."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_23/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video61">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video61" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_35_obj_0_Access_Card_Alignment_and_Swipe.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Align the access card with the electronic lock's card reader and swipe to grant access."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_31/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video62">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video62" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_43_obj_3_Position_Battery_for_Inspection.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Place the battery into the charger to mimic an inspection process."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_22/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video63">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video63" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_34_obj_0_Align_Chair_with_Table_Edge.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Rotate the chair to align it parallel to the table's edge."
+          </h2> </font>
+        </div>
+        <div class="item item-video64">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video64" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_34_obj_1_Table_Relocation.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Move the table from its current position to a new location within the room."
+          </h2> </font>
+        </div>
+        <div class="item item-video65">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video65" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_34_obj_2_Relocation.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Relocate the bottle from its current position to the seat of the chair."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_26/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video66">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video66" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_38_obj_1_Relocation.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Rotate the valve to detach it from the radiator."
+          </h2> </font>
+        </div>
+        <div class="item item-video67">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video67" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_38_obj_2_Object_Removal.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Grasp the candy can and remove it from the radiator to avert the risk of ignition."
+          </h2> </font>
+        </div>
+        <div class="item item-video68">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video68" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_38_obj_1_Position_Adjustment.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Rotate the valve around its own axis to open or close the radiator."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_30/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video69">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video69" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_42_obj_0_Position_Adjustment.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Move and rotate the office chair to face the desk to prepare for a user to sit and work."
+          </h2> </font>
+        </div>
+        <div class="item item-video70">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video70" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_42_obj_0_Align_with_Desk.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Rotate the office chair for better access."
+          </h2> </font>
+        </div>
+        <div class="item item-video71">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video71" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_42_obj_1_Filing_Cabinet_Drawer_Rotation.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Pull and turn the filing cabinet drawer to ready it for opening."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_37/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video72">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video72" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_49_obj_3_Relocate_Apple_to_Bowl.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Pick up the apple and place it inside the bowl without changing the orientation of the apple."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_32/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video73">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video73" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_44_obj_0_Position_Adjustment_for_Accessibility.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Place the delivery bag closer to the the blue shoe without it falling off."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_34/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video74">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video74" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_46_obj_1_Position_Adjustment.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Move the trash bin closer to the chair to make it more accessible for someone sitting on the chair."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_25/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video75">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video75" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_37_obj_3_Microwave_Orientation_Adjustment.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Move and rotate the microwave on the countertop to change its orientation for user preference."
+          </h2> </font>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_13/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video21">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video21" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_25_obj_1_Adjust_Viewing_Angle.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Rotate the monitor to change the viewing angle for better ergonomics."
+          </h2> </font>
+        </div>
+        <div class="item item-video22">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video22" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_25_obj_2_Position_Keyboard_for_User_Comfort.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Slide the keyboard closer to the monitor to create space for the user's wrists and forearms."
+          </h2> </font>
+        </div>
+        <div class="item item-video23">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video23" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_25_obj_3_Mouse_Orientation_Adjustment.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Rotate the mouse to ensure that it is correctly oriented for user operation."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/NOCS_train/scene_3/0158_color.png" alt=""/>
+        </div>
+        <div class="item item-video24">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video24" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_8_obj_0_Bowl_on_Can.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Invert the bowl and place it over the can."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_3/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video25">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video25" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_15_obj_0_Kettle_to_Container_Transfer.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Pick up the electric kettle and pour its content into the container."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_6/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video26">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video26" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_18_obj_0_Rotate_Coffee_Lid.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Lift the lid of the coffee container upwards to allow access to the interior for refilling."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_7/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video27">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video27" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_19_obj_1_Plug_Insertion.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Reinsert the plug into the electrical socket for power connectivity."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_8/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video28">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video28" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_20_obj_4_Position_Adjustment.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Place the notebook on the magazine for an aesthetic arrangement."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_14/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video29">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video29" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_26_obj_0_Removing_and_Handing_Over_Sign.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Detach the sign from the board and pass it into a person's hand."
+          </h2> </font>
+        </div>
+        
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/NOCS_test/scene_1/0006_color.png" alt=""/>
+        </div>
+        <div class="item item-video30">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video30" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_0_obj_1_Aim_and_Frame.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Rotate the camera to aim at the mug for a still life photo."
+          </h2> </font>
+        </div>
+        <div class="item item-video31">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video31" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_0_obj_3_Shake_Can.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Shake the can to mix its contents."
+          </h2> </font>
+        </div>
+        <div class="item item-video32">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video32" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_0_obj_4_Bowl_to_Mug_Transfer_Simulation.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Transfer the contents of the bowl into the mug."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_9/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video33">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video33" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_21_obj_0_Dispenser_Activation.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Press the lever of the hand sanitizer dispenser to extrude sanitizer."
+          </h2> </font>
+        </div>
+        <div class="item item-video34">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video34" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_21_obj_1_Adjust_Sign_Orientation.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Rotate the sign to a different angle while maintaining its position on the wall."
+          </h2> </font>
+        </div>
+        <div class="item item-video35">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video35" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_21_obj_1_Relocate_Sign_to_a_New_Position.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Translate the sign to a new location on the same wall or a different wall without changing its orientation."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_12/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video36">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video36" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_24_obj_0_Align_Pen_with_Marker_Tray.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Translate the pen to align it parallel with the marker tray edge, without leaving the tray."
+          </h2> </font>
+        </div>
+        <div class="item item-video37">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video37" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_24_obj_1_Erasing_Whiteboard_Letters.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Slide the blue eraser left towards the letters and erase them."
+          </h2> </font>
+        </div>
+        <div class="item item-video38">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video38" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_24_obj_2_Align_with_Pen.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Reposition the red eraser to be parallel with the marker, aligned on the same axis without touching."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_12/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video39">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video39" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_24_obj_0_Slide_on_Marker_Tray.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Slide the marker across the marker tray."
+          </h2> </font>
+        </div>
+        <div class="item item-video40">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video40" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_24_obj_1_Stack_Erasers.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Place the blue eraser on top of the red eraser carefully without knocking it over."
+          </h2> </font>
+        </div>
+        <div class="item item-video41">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video41" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_24_obj_2_Erasing_Whiteboard_Letters.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Place the red eraser to the left of the blue eraser and proceed to erase letters."
+          </h2> </font>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_32/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video76">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video76" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_44_obj_0_Relocate_Delivery_Bag.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Move the delivery bag from its current position to a designated storage area."
+          </h2> </font>
+        </div>
+        <div class="item item-video77">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video77" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_44_obj_1_Align_Shoes.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Move the green and white shoe towards the blue shoe on the table to align them side by side."
+          </h2> </font>
+        </div>
+        <div class="item item-video78">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video78" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_44_obj_2_Shoe_Pairing.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Move the blue shoe to be adjacent to the green and white shoe, creating a pair."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_36/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video79">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video79" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_48_obj_2_Place_Carton_into_Microwave.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Pick up the carton and place it inside the microwave."
+          </h2> </font>
+        </div>
+        <div class="item item-video80">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video80" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_48_obj_3_Container_and_Carton_Coordination.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Pick up the container and move it next to the carton, creating an organized space on the countertop"
+          </h2> </font>
+        </div>
+        <div class="item item-video81">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video81" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_48_obj_3_Place_Container_into_Microwave.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Grasp the container and put it inside the microwave."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_37/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video82">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video82" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_49_obj_0_Transfer_to_Cooktop.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Relocate the pot to the center of the cooktop, ensuring it is stable and ready for cooking."
+          </h2> </font>
+        </div>
+        <div class="item item-video83">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video83" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_49_obj_2_Place_Orange_in_Pot.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Pick up the orange and place it inside the pot."
+          </h2> </font>
+        </div>
+        <div class="item item-video84">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video84" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_49_obj_3_Align_Apple_with_Orange.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Move the apple next to the orange on the cutting board, maintaining their upright positions."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_37/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video85">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video85" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_49_obj_4_Slice_Apple.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Use the knife to slice the apple into halves or wedges, making sure it stays on the cutting board."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_34/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video86">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video86" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_46_obj_2_Place_on_Floor.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Pick up the container and place it on the floor, ensuring stability."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_38/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video87">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video87" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_50_obj_0_Align_Pan_to_Stovetop_Burner.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Translate the pan horizontally to center it on the stovetop burner for even heating."
+          </h2> </font>
+        </div>
+        <div class="item item-video88">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video88" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_50_obj_3_Flip_Lid_Orientation.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Turn the pot lid 180 degrees around its central axis to switch its orientation from up to down."
+          </h2> </font>
+        </div>
+        <div class="item item-video89">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video89" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_50_obj_3_Position_Adjustment_of_Lid.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Adjust the position of the pot lid by translating it to a specific point on the cutting board."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_38/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video90">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video90" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_50_obj_4_Relocate_Cutting_Board.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Relocate the cutting board from its position on the counter to another location."
+          </h2> </font>
+        </div>
+
+        <div class="item">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Input </h2> </font>
+          <img src="static/images/test_data/captured/scene_25/0000_color.png" alt=""/>
+        </div>
+        <div class="item item-video91">
+          <h2 class="subtitle has-text-centered" style="font-weight: bold; margin-bottom: 0; margin-top: 0"> <font size="-1.0"> Output </h2> </font>
+          <video poster="" id="video91" controls muted playsinline  height="100%">
+            <source src="./static/videos/more/video_37_obj_2_Spoon_to_Mug_Transfer.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered" style="font-family: Courier New; font-weight: bold"> <font size="-1.5">
+            "Lift the spoon and place it to rest on the mug."
+          </h2> </font>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <h2 class="title is-3">Dataset</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+
+          <!-- <div class="publication-video"> -->
+            <!-- Youtube embed code here -->
+            <!-- <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+           -->
+           <img src="static/images/dataset_stats.jpg" alt="Dataset"/>
+           <div class="content has-text-justified">
+             <p>
+              As we are the first to propose <em>zero-shot task hallucination</em>, there lacks a pre-existing dataset for evaluation. 
+              Therefore, we craft a diverse evaluation dataset by combining self-captured photos and scenes from the NOCS dataset.
+              We capture 38 photos using an iPhone 12 Pro Max. From NOCS, we use its real-world part of both the training and test sets, which encompasses 13 distinct scenes.
+              Our dataset covers diverse scenes (<em>e.g.</em>, office, kitchen, bathroom), and features a rich diversity of object categories (116) and quantities (185), 
+              with each image containing 1 - 7 objects and 1 - 3 tasks proposed for each object (278 tasks/task videos/planned trajectories in total). 
+              The dataset's diversity is further enhanced by the variety of perspectives from which the images are captured or selected (<em>e.g.</em>, frontal, top-down, side views).
+
+             </p>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <h2 class="title is-3">Qualitative Comparison</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+
+          <!-- <div class="publication-video"> -->
+            <!-- Youtube embed code here -->
+            <!-- <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+           -->
+           <img src="static/images/qualitative_comparison.jpg" alt="Qualitative Comparison"/>
+           <div class="content has-text-justified">
+             <p>
+              We compare with state-of-the-art 3D-aware image editing and video generation models, 3DIT and Runway Gen-2.
+              We limit comparisons to rotation and translation tasks to avoid bias against 3DIT and Runway in more nuanced context-dependent tasks (<em>e.g.</em>, slicing an apple), 
+              where their performances fall short. For 3DIT, we generate and connect frames with our planned trajectories. For Runway, we prompt it with task descriptions.
+             </p>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- Video carousel -->
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Another Carousel</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video1" autoplay controls muted loop height="100%">
+
+            <source src="static/videos/carousel1.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" autoplay controls muted loop height="100%">
+
+            <source src="static/videos/carousel2.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" autoplay controls muted loop height="100%">\
+
+            <source src="static/videos/carousel3.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End video carousel -->
+
+
+
+
+
+
+<!-- Paper poster -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+
+      </div>
+    </div>
+  </section> -->
+<!--End paper poster -->
+
+
+<!--BibTex citation -->
+  <!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{,
+  title={},
+  author={},
+  booktitle={},
+  year={2024}
+}</code></pre>
+    </div>
+</section> -->
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://ttchengab.github.io/continuous_3d_words/" target="_blank">Academic Project Page Template</a>.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
